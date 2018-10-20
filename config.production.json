@@ -1,0 +1,5 @@
+{
+  "githubToken": process.env.GITHUB_TOKEN,
+  "rsaPrivateKey": JSON.stringify(process.env.RSA_PRIVATE_KEY),
+  "port": 8080
+}
