@@ -1,5 +1,15 @@
+.idea/
+.vscode/
+*.iml
+
 config.json
+<<<<<<< HEAD
 !config.*.json
+=======
+config.*.json
+!config.test.json
+>>>>>>> c8e339f65c3e760518a849dbbfb1deb2c8e6410a
 !config.example.json
+coverage/
 node_modules/
 staticman_key

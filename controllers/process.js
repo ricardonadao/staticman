@@ -113,6 +113,8 @@ function sendResponse (res, data) {
     }
 
     payload.errorCode = errorCode
+  } else if (error) {
+    payload.rawError = data.err.toString()
   } else {
     payload.fields = data.fields
   }
@@ -120,23 +122,20 @@ function sendResponse (res, data) {
   res.status(statusCode).send(payload)
 }
 
-module.exports = (req, res, next) => {
-  const staticman = new Staticman(req.params)
+module.exports = async (req, res, next) => {
+  const staticman = await new Staticman(req.params)
 
-  staticman.authenticate()
   staticman.setConfigPath()
   staticman.setIp(req.headers['x-forwarded-for'] || req.connection.remoteAddress)
   staticman.setUserAgent(req.headers['user-agent'])
 
-  return checkRecaptcha(staticman, req).then(usedRecaptcha => {
-    return process(staticman, req, res)
-  }).catch(err => {
-    return sendResponse(res, {
+  return checkRecaptcha(staticman, req)
+    .then(usedRecaptcha => process(staticman, req, res))
+    .catch(err => sendResponse(res, {
       err,
       redirect: req.body.options && req.body.options.redirect,
       redirectError: req.body.options && req.body.options.redirectError
-    })
-  })
+    }))
 }
 
 module.exports.checkRecaptcha = checkRecaptcha

@@ -1,6 +1,6 @@
 <img src="logo.png" width="300">
 
-# Staticman [![coverage](https://img.shields.io/badge/coverage-53%25-red.svg?style=flat)](https://github.com/eduardoboucas/staticman) [![Build Status](https://travis-ci.org/eduardoboucas/staticman.svg?branch=master)](https://travis-ci.org/eduardoboucas/staticman) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+# Staticman [![coverage](https://img.shields.io/badge/coverage-81%25-yellow.svg?style=flat)](https://github.com/eduardoboucas/staticman) [![Build Status](https://travis-ci.org/eduardoboucas/staticman.svg?branch=master)](https://travis-ci.org/eduardoboucas/staticman) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 > Static sites with superpowers
 
@@ -10,11 +10,13 @@ Staticman is a Node.js application that receives user-generated content and uplo
 
 It consists of a small web service that handles the `POST` requests from your forms, runs various forms of validation and manipulation defined by you and finally pushes them to your repository as data files. You can choose to enable moderation, which means files will be pushed to a separate branch and a pull request will be created for your approval, or disable it completely, meaning that files will be pushed to the main branch automatically.
 
-You can download and run the Staticman API on your own infrastructure, or you can simply use the public instance of the Staticman API for free. If using the public instance, you can skip to *[Setting up repository](#setting-up-a-repository)*.
+You can download and run the Staticman API on your own infrastructure. The easiest way to get a personal Staticman API instance up and running is to use the free tier of Heroku. If deploying to Heroku you can simply click the button below.
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ## Requirements
 
-- Node.js 4.8.3+
+- Node.js 8.11.3+
 - npm
 - A [personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) for the GitHub account you want to run Staticman with
 - An SSH key (click [here](https://help.github.com/articles/connecting-to-github-with-ssh/) to learn how to create one)
@@ -57,8 +59,6 @@ To add Staticman to a repository, you need to add the bot as a collaborator with
 http://your-staticman-url/v2/connect/GITHUB-USERNAME/GITHUB-REPOSITORY
 ```
 
-If you're using the public instance, the account you want to add is [staticmanapp](https://github.com/staticmanapp) and the URL is https://api.staticman.net/v2/connect/GITHUB-USERNAME/GITHUB-REPOSITORY.
-
 ## Site configuration
 
 Staticman will look for a config file. For the deprecated `v1` endpoints, this is a  `_config.yml` with a `staticman` property inside; for `v2` endpoints, Staticman looks for a `staticman.yml` file at the root of the repository.
@@ -77,31 +77,4 @@ Would you like to contribute to Staticman? That's great! Here's how:
 ## Useful links
 
 - [Improving Static Comments with Jekyll & Staticman](https://mademistakes.com/articles/improving-jekyll-static-comments/)
-- [Hugo + Staticman: Nested Replies and E-mail Notifications](https://networkhobo.com/2017/12/30/hugo---staticman-nested-replies-and-e-mail-notifications/)
-
-## Sites using Staticman
-
-- [Popcorn](http://popcorn.staticman.net) ([Source](https://github.com/eduardoboucas/popcorn))
-- [eduardoboucas.com](https://eduardoboucas.com) ([Source](https://github.com/eduardoboucas/eduardoboucas.github.io))
-- [Made Mistakes](https://mademistakes.com/) ([Source](https://github.com/mmistakes/made-mistakes-jekyll))
-- [Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/) ([Source](https://github.com/mmistakes/minimal-mistakes))
-- [/wg/ Startpages](http://startpages.cf/) ([Source](https://github.com/twentytwoo/startpages.cf))
-- [mainstrea.ml](https://mainstrea.ml) ([Source](https://github.com/twentytwoo/mainstrea.ml))
-- [Open Source Design Job Board](http://opensourcedesign.net/jobs/) ([Source](https://github.com/opensourcedesign/jobs/))
-- [zongren.me](https://zongren.me/) ([Source](https://gitlab.com/zongren/zongren.gitlab.io/)) 
-- [DOTSLASHLINUX](http://www.dotslashlinux.com/) ([Source](https://github.com/firasuke/DOTSLASHLINUX/))
-- [Spinningnumbers.org](http://spinningnumbers.org/) ([Source](https://github.com/willymcallister/spinningnumbers))
-- [blog.justin.kelly.org.au](https://blog.justin.kelly.org.au/) ([Source](github.com/justinkelly/justinkelly.github.io))
-- [chimad-phase-field](https://pages.nist.gov/chimad-phase-field/) ([Source](https://github.com/usnistgov/chimad-phase-field))
-- [abhinavsarkar.net](https://abhinavsarkar.net) ([Source](https://github.com/abhin4v/abhin4v.github.io/))
-- [beautifullhugo theme](https://github.com/halogenica/beautifulhugo) ([Source](https://github.com/halogenica/beautifulhugo/pull/99))
-- [blog.jesuislibre.org](http://blog.jesuislibre.org) ([Source](https://github.com/badele/blog.jesuislibre.org))
-- [silentcomics.com](https://silentcomics.com) ([Source](https://github.com/SilentComics/silentcomics.github.io/))
-- [irz.fr](https://irz.fr) ([Source](https://github.com/arthurlacoste/irz.fr/tree/gh-pages))
-- [masterandrey.com](https://masterandrey.com/posts/en/disqus_comments_staticman/)
-- [Tyne Time](https://www.tynetime.com) ([Source](https://github.com/Doocey/tyne-time-hugo))
-- [BinaryMist](https://binarymist.io/blog) ([Source](https://github.com/binarymist/BinaryMistBlog))
-- [La ruta de la cebada](https://larutadelacebada.com) ([Source](https://github.com/lasocial/larutadelacebada.github.io))
-- [Gatsby Central](https://www.gatsbycentral.com) ([Source](https://github.com/GatsbyCentral/gatsbycentral.com))
-
-Are you using Staticman? [Let us know!](https://github.com/eduardoboucas/staticman/edit/master/README.md)
+- [Hugo + Staticman: Nested Replies and E-mail Notifications](https://networkhobo.com/2017/12/30/hugo-staticman-nested-replies-and-e-mail-notifications/)
