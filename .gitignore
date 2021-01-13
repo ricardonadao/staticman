@@ -9,3 +9,14 @@ config.*.json
 coverage/
 node_modules/
 staticman_key
+
+# macOS
+.DS_Store
+
+# Vim
+*~
+*.sw[p_]
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
