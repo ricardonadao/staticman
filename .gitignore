@@ -10,7 +10,6 @@ coverage/
 node_modules/
 staticman_key
 
-
 # Vim
 *~
 *.sw[p_]
@@ -40,3 +39,4 @@ codekit-config.json
 .sass-cache
 _asset_bundler_cache
 _site
+*.sublime-workspace
